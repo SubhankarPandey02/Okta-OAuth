@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth 2.0 Authorization Code Flow Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 OAuth 2.0 Authorization Code Flow</h1>
+            <p class="subtitle">Interactive Demo with Okta Identity Provider</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Flow Visualization -->
+            <section class="flow-section">
+                <h2>OAuth Flow Steps</h2>
+                <div class="flow-steps">
+                    <div class="step" id="step1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Authorization Request</h3>
+                            <p>User clicks login → App redirects to Okta with client_id, redirect_uri, scope, and state</p>
+                            <div class="step-status pending">Pending</div>
+                        </div>
+                    </div>
+
+                    <div class="step-arrow">↓</div>
+
+                    <div class="step" id="step2">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>User Authentication</h3>
+                            <p>User authenticates with Okta and grants consent</p>
+                            <div class="step-status pending">Pending</div>
+                        </div>
+                    </div>
+
+                    <div class="step-arrow">↓</div>
+
+                    <div class="step" id="step3">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Authorization Code Callback</h3>
+                            <p>Okta redirects back with authorization code and state</p>
+                            <div class="step-status pending">Pending</div>
+                        </div>
+                    </div>
+
+                    <div class="step-arrow">↓</div>
+
+                    <div class="step" id="step4">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Token Exchange</h3>
+                            <p>App exchanges authorization code for access token and ID token</p>
+                            <div class="step-status pending">Pending</div>
+                        </div>
+                    </div>
+
+                    <div class="step-arrow">↓</div>
+
+                    <div class="step" id="step5">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Access Protected Resource</h3>
+                            <p>App uses access token to fetch user information</p>
+                            <div class="step-status pending">Pending</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Panel -->
+            <section class="control-section">
+                <h2>Control Panel</h2>
+                <div class="controls">
+                    <button id="loginBtn" class="btn btn-primary">
+                        🚀 Start OAuth Flow (Login)
+                    </button>
+                    <button id="logoutBtn" class="btn btn-secondary" disabled>
+                        🚪 Logout
+                    </button>
+                    <button id="resetBtn" class="btn btn-tertiary">
+                        🔄 Reset Demo
+                    </button>
+                </div>
+
+                <!-- User Info Display -->
+                <div id="userInfoSection" class="user-info hidden">
+                    <h3>✅ Authenticated User</h3>
+                    <div id="userInfoContent"></div>
+                </div>
+
+                <!-- Token Display -->
+                <div id="tokenSection" class="token-display hidden">
+                    <h3>🎫 Tokens Received</h3>
+                    <div class="token-item">
+                        <h4>Access Token</h4>
+                        <code id="accessToken"></code>
+                    </div>
+                    <div class="token-item">
+                        <h4>ID Token</h4>
+                        <code id="idToken"></code>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Logs Section -->
+        <section class="logs-section">
+            <div class="logs-header">
+                <h2>📋 Flow Execution Logs</h2>
+                <button id="clearLogsBtn" class="btn btn-small">Clear Logs</button>
+            </div>
+            <div id="logs" class="logs-container">
+                <div class="log-entry info">
+                    <span class="log-time">Ready</span>
+                    <span class="log-message">Click "Start OAuth Flow" to begin the demonstration</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Created for educational purposes | OAuth 2.0 Authorization Code Flow with PKCE</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

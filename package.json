@@ -1,0 +1,19 @@
+{
+  "name": "oauth-demo-app",
+  "version": "1.0.0",
+  "description": "OAuth 2.0 Authorization Code Flow demonstration application using Okta",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["oauth", "okta", "authorization-code-flow", "education"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.2",
+    "express-session": "^1.17.3"
+  }
+}
