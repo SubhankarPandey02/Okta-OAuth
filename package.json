@@ -7,7 +7,12 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "keywords": ["oauth", "okta", "authorization-code-flow", "education"],
+  "keywords": [
+    "oauth",
+    "okta",
+    "authorization-code-flow",
+    "education"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
